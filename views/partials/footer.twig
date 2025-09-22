@@ -1,0 +1,29 @@
+{# views/partials/footer.twig #}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    
+    {# ---------- About & Contact & Social Combined ---------- #}
+    <div class="footer-content">
+      <h4 class="footer-title">Contact Us {{ site.name }}</h4>
+      <p class="footer-description">{{ site.description }}</p>
+
+      <ul class="footer-contact">
+        <li> <a href="mailto:hello@fatbeehive.com">hello@fatbeehive.com</a></li>
+        <li> +44 (0)1234 988 788</li>
+        <li>13 Charity Street, Lekki Lagos, Nigeria</li>
+      </ul>
+
+      <ul class="social-links">
+        <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
+
+    <p class="footer-copy">&copy; {{ "now"|date("Y") }} {{ site.name }}. All rights reserved.</p>
+  </div>
+
+  {{ function('wp_footer') }}
+</footer>
+</body>
+</html>

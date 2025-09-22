@@ -1,0 +1,35 @@
+.contact-hero {
+  background: url('../images/hero-contact.jpg') center/cover no-repeat;
+  height: 40vh;
+  @include flex-center;
+  color: $text-light;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  button {
+    @include button();
+    cursor: pointer;
+  }
+}

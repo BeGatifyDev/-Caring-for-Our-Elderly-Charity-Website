@@ -1,0 +1,15 @@
+{# views/page-about.twig #}
+{% extends "base.twig" %}
+
+{% block content %}
+  {% include "partials/hero.twig" with {
+    title: "About Us",
+    hero_subtitle: "Learn more about our mission and team."
+  } %}
+
+  <section class="container">
+    <h2>Our Story</h2>
+    <p>{{ post.content }}</p>
+    <img src="{{ theme.link }}/assets/images/about-team.jpg" alt="Our Team" class="full-width">
+  </section>
+{% endblock %}

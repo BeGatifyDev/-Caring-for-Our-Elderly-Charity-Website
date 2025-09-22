@@ -1,0 +1,128 @@
+header {
+ background: $dark-bg;
+  color: $text-light;
+  padding: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 4px solid #08ccda;
+
+  .container {
+    @include flex-center;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    
+  }
+
+  /* === LOGO === */
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $text-light;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+
+    img {
+      height: 40px;
+      width: auto;
+      margin-right: 0.5rem;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  /* === NAVIGATION === */
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+
+      li a {
+        color: $text-light;
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+
+        &:hover {
+          color: $primary;
+          border-bottom: 2px solid $primary;
+        }
+      }
+    }
+  }
+
+  /* === HAMBURGER BUTTON === */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 3px;
+      background: $text-light;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    &.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    &.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+
+  /* === RESPONSIVE RULES === */
+  @media (max-width: 768px) {
+    nav {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      background: $dark-bg;
+      display: none; // hidden by default
+      flex-direction: column;
+
+      ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0;
+        li a {
+          display: block;
+          padding: 1rem;
+          border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+      }
+
+      &.active {
+        display: flex; 
+      }
+    }
+
+    .menu-toggle {
+      display: flex; 
+    }
+  }
+}

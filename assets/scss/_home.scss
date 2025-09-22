@@ -1,0 +1,209 @@
+/* ==============================================
+   HERO SECTION
+   ============================================== */
+.hero-section {
+  @include flex-center;                  
+  flex-direction: column;                 
+  position: relative;
+  min-height: 40vh;                       
+  padding: 5rem 1rem 6rem;                
+  text-align: center;
+  color: $text-light;
+  max-width: 1200px;
+  margin: 3rem auto; 
+  
+
+  /* Overlay for text contrast */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: $spacing-unit;
+    @include respond(tablet) { font-size: 2.5rem; }
+    @include respond(mobile) { font-size: 2rem; }
+  }
+
+  p.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    max-width: 650px;
+    line-height: 1.6;
+    @include respond(mobile) { font-size: 1rem; }
+  }
+
+  a.button {
+    @include button($primary);
+    margin-top: 1rem;
+  }
+}
+
+/* ==============================================
+   INTRO / WELCOME SECTION
+   ============================================== */
+.intro-section {
+  position: relative;
+  padding: 4rem 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 3rem auto;                
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  .intro-inner {
+    max-width: 700px;
+    margin: 0 auto;
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: $primary-dark;
+    }
+
+  .section-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: $text-muted;
+  margin-bottom: 1.5rem;
+  font-weight: 600;   // ✅ Semi-bold for a professional look
+}
+
+
+    .primary-button {
+      @include button($primary);
+    }
+  }
+}
+/* ==============================================
+   PROGRAMS SECTION (Home)
+   ============================================== */
+.programs {
+  position: relative;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e8f0ff 100%); // Soft gradient
+  border-radius: 12px;
+  text-align: center;
+
+  /* ---------- Section Header ---------- */
+  .section-header {
+    display: flex;
+    flex-direction: column;       // ✅ Forces vertical stacking
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    background-color: rgba(255, 255, 255, 0.56);
+    padding: 1.2rem;
+    border-radius: 10px;
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 0.6rem;      // Space between title & subtitle
+      color: $primary-dark;
+      font-weight: 800;           // Extra bold for emphasis
+      line-height: 1.3;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: $text-muted;
+      font-weight: 600;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @include respond(tablet) {
+      .section-title { font-size: 1.9rem; }
+      .section-subtitle { font-size: 1rem; }
+    }
+
+    @include respond(mobile) {
+      .section-title { font-size: 1.7rem; }
+      .section-subtitle { font-size: 0.95rem; }
+    }
+  }
+
+  /* ---------- Program Grid ---------- */
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2rem;
+
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1.3rem;
+    }
+  }
+
+  /* ---------- Program Card ---------- */
+  .program-card {
+    background: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 320px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Image */
+    .program-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;        // ✅ Prevents image distortion
+        display: block;
+      }
+    }
+
+    /* Content */
+    .program-content {
+      padding: 1.4rem;
+
+      h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: $primary;
+        font-weight: 800;
+        line-height: 1.4;
+      }
+
+      p {
+        font-size: 0.98rem;
+        color: $text-muted;
+        line-height: 1.6;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      @include respond(mobile) {
+        h3 { font-size: 1.1rem; }
+        p  { font-size: 0.9rem; }
+      }
+    }
+  }
+}

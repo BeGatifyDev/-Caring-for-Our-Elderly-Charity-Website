@@ -1,0 +1,26 @@
+{# views/base.twig #}
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+  <meta charset="{{ site.charset }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    {% if wp_title %}{{ wp_title }} | {% endif %}{{ site.name }}
+  </title>
+
+  <link rel="stylesheet" href="{{ theme.link }}/style.css">
+  {{ function('wp_head') }}
+</head>
+
+<body {{ body_class }}>
+  {% include "partials/header.twig" %}
+
+  <main class="site-main">
+    {% block content %}
+      {# Page-specific content will be injected here #}
+    {% endblock %}
+  </main>
+
+  {% include "partials/footer.twig" %}
+</body>
+</html>

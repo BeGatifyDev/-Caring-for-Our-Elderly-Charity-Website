@@ -1,0 +1,17 @@
+{# views/page-contact.twig #}
+{% extends "base.twig" %}
+
+{% block content %}
+  {% include "partials/hero.twig" with {
+    title: "Contact Us",
+    hero_subtitle: "We’d love to hear from you."
+  } %}
+
+  <section class="container">
+    <h2>Get in Touch</h2>
+    <p>Fill out the form below and we will respond as soon as possible.</p>
+    <div class="contact-form">
+      {{ function('do_shortcode', '[contact-form-7 id="123" title="Contact form"]') }}
+    </div>
+  </section>
+{% endblock %}

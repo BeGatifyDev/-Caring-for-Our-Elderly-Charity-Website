@@ -1,0 +1,80 @@
+/* ==============================================
+   FOOTER STYLES (Compact Height)
+   ============================================== */
+.site-footer {
+  background: $dark-bg;
+  color: $text-light;
+  padding: 1rem 0.8rem;        // ⬅️ Reduced top/bottom padding
+  text-align: center;
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;               // ⬅️ Reduced spacing between sections
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;               // ⬅️ Tight gap
+
+    .footer-title {
+      font-size: 1.2rem;       // ⬅️ Slightly smaller
+      margin-bottom: 0.25rem;  // ⬅️ Less margin
+      color: $primary;
+    }
+
+    .footer-description {
+      max-width: 600px;
+      font-size: 0.85rem;      // ⬅️ Smaller text
+      line-height: 1.4;
+      margin: 0;               // Remove extra space
+    }
+
+    .footer-contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.85rem;
+      li { margin-bottom: 0.2rem; } // ⬅️ Tight spacing
+      a { color: $text-light; &:hover { color: $primary; } }
+    }
+
+    .social-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;             // ⬅️ Smaller gaps
+      padding: 0;
+      margin: 0;
+
+      li a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;           // ⬅️ Smaller icons
+        height: 32px;
+        border-radius: 50%;
+        background: #eee;
+        color: #333;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        &:hover { background: $primary; color: #fff; }
+      }
+    }
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  @include respond(mobile) {
+    padding: 0.8rem 0.5rem;    // ⬅️ Even smaller on mobile
+  }
+}

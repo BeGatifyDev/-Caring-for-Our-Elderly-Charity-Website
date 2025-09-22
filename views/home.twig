@@ -1,0 +1,75 @@
+{# views/home.twig #}
+{% extends "base.twig" %}
+
+{% block content %}
+  {# =============================
+     HERO SECTION
+     ============================= #}
+  {% include "partials/hero.twig" with {
+    title: "Caring for Our Elderly",
+    hero_subtitle: "Join us in supporting the aged and giving them a better life.",
+    hero_background: theme.link ~ '/assets/images/hero-home.jpg'
+  } %}
+
+  {# =============================
+     INTRO / WELCOME SECTION
+     ============================= #}
+  <section class="intro-section container">
+    <div class="intro-inner">
+      <h2 class="section-title">Welcome to {{ site.name }}</h2>
+      <p class="section-description">
+        We are a non-profit organization dedicated to improving the lives of elderly citizens
+        through care programs, health support, and community engagement. Together, we can provide
+        the love, dignity, and assistance they deserve.
+      </p>
+      <a class="button primary-button" href="{{ site.url }}/donate">
+        Donate Now
+      </a>
+    </div>
+  </section>
+
+  {# =============================
+     PROGRAMS SECTION
+     ============================= #}
+  <section class="programs container">
+    <header class="section-header">
+      <h2 class="section-title">Our Programs</h2><br/>
+      <p class="section-subtitle">
+        Explore the key initiatives we provide to ensure quality care and a vibrant community
+        for the elderly.
+      </p>
+    </header>
+
+    <div class="program-grid">
+      <article class="program-card">
+        <figure class="program-image">
+          <img src="{{ theme.link }}/assets/images/program1.jpg" alt="Healthcare Support">
+        </figure>
+        <div class="program-content">
+          <h3>Healthcare Support</h3>
+          <p>Regular medical checkups, preventive care, and access to essential healthcare services.</p>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <figure class="program-image">
+          <img src="{{ theme.link }}/assets/images/program2.jpg" alt="Food & Shelter">
+        </figure>
+        <div class="program-content">
+          <h3>Food & Shelter</h3>
+          <p>Nutritious meals and safe shelter for elderly individuals who need assistance.</p>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <figure class="program-image">
+          <img src="{{ theme.link }}/assets/images/program3.jpg" alt="Community Engagement">
+        </figure>
+        <div class="program-content">
+          <h3>Community Engagement</h3>
+          <p>Events and social activities to keep seniors active, connected, and inspired.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+{% endblock %}

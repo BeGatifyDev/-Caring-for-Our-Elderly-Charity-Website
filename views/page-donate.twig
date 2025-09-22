@@ -1,0 +1,19 @@
+{# views/page-donate.twig #}
+{% extends "base.twig" %}
+
+{% block content %}
+  {% include "partials/hero.twig" with {
+    title: "Make a Donation",
+    hero_subtitle: "Your support keeps our mission alive."
+  } %}
+
+  <section class="container">
+    <h2>Why Donate?</h2>
+    <p>Your donation provides food, medical care, and shelter for elderly people in need.</p>
+
+    <div class="donation-options">
+      <img src="{{ theme.link }}/assets/images/donate.jpg" alt="Donate" class="full-width">
+      {{ function('do_shortcode', '[give_form id="456"]') }}
+    </div>
+  </section>
+{% endblock %}

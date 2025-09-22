@@ -1,0 +1,22 @@
+.donate-hero {
+  background: url('../images/hero-donate.jpg') center/cover no-repeat;
+  height: 40vh;
+  @include flex-center;
+  color: $text-light;
+  text-align: center;
+}
+
+.donate-section {
+  .container {
+    max-width: 700px;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+  }
+
+  a.button {
+    @include button();
+  }
+}

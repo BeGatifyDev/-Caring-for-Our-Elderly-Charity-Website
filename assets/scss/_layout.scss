@@ -1,0 +1,23 @@
+.container {
+  width: 90%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: $spacing-unit;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+  }
+}

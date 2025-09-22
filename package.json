@@ -1,0 +1,12 @@
+{
+  "name": "old-age-charity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+  "watch": "sass --watch assets/scss:assets/css"
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

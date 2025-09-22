@@ -1,0 +1,23 @@
+.about-hero {
+  background: url('../images/hero-about.jpg') center/cover no-repeat;
+  height: 40vh;
+  @include flex-center;
+  color: $text-light;
+  text-align: center;
+}
+
+.about-content {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    @include respond(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
